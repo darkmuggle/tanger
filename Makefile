@@ -1,2 +1,2 @@
 build:
-	buildah bud -f Dockerfile  -t muggle.dev/tanger .
+	buildah bud -f Dockerfile -t  quay.io/behoward/tanger .
