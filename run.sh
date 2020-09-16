@@ -8,6 +8,16 @@ fi
 
 /usr/libexec/tangd-update /var/db/tang /var/cache/tang
 
+(sleep 5; out="$(/usr/bin/tang-show-keys ${PORT})"; sleep 1; cat <<EOM
+
+
+============================================
+Thumbprint: ${out}
+      Port: ${PORT}
+============================================
+EOM
+) &
+
 while /bin/true;
 do
     socat -v tcp-l:${PORT},fork exec:"/usr/libexec/tangd /var/cache/tang"
