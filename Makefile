@@ -3,3 +3,6 @@ build:
 
 run:
 	podman run --rm -it -p 8880:80 quay.io/behoward/tanger
+
+ocp:
+	oc process -f tanger.yaml | oc apply -f -
