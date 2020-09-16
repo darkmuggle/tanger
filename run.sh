@@ -7,10 +7,8 @@ if [ ! $(ls -1 /var/db/tang/*jwk) > /dev/null 2>&1 ]; then
 fi
 
 /usr/libexec/tangd-update /var/db/tang /var/cache/tang
-me=$(whoami | id -u)
-chown -Rv "${me}:${me}" /var/db/tang /var/cache/tang
 
 while /bin/true;
 do
-    socat -v tcp-l:${PORT},fork exec:"/usr/libexec/tangd /var/cache/tang",su="${me}"
+    socat -v tcp-l:${PORT},fork exec:"/usr/libexec/tangd /var/cache/tang"
 done
