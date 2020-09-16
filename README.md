@@ -31,6 +31,12 @@ podman run --rm --detach -v tang:/var/db/tang -p 8180:80 quay.io/behoward/tanger
 
 The keys will be stored in the `tang` volume.
 
+## Change port
+```
+podman volume create tang
+podman run --rm --detach -e PORT=8180 -v tang:/var/db/tang -p 8180:8180 quay.io/behoward/tanger
+```
+
 ## Creating new keys
 You can create or cycle the keys by running:
 ```

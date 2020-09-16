@@ -11,5 +11,7 @@ RUN microdnf install -y \
 
 COPY run.sh /usr/local/sbin
 
+ENV PORT=80
+
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/usr/local/sbin/run.sh"]

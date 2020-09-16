@@ -1,4 +1,5 @@
 #!/bin/bash
+export PORT="${PORT:-80}"
 
 if [ ! $(ls -1 /var/db/tang/*jwk) > /dev/null 2>&1 ]; then
     echo "Generating tang keys"
@@ -12,5 +13,5 @@ chown -Rv tang:tang /var/db/tang /var/cache/tang
 
 while /bin/true;
 do
-    socat -v tcp-l:80,fork exec:"/usr/libexec/tangd /var/cache/tang",su=tang
+    socat -v tcp-l:${PORT},fork exec:"/usr/libexec/tangd /var/cache/tang",su=tang
 done
