@@ -2,11 +2,15 @@
 
 Execute a containerized Tang Server
 
+## Prior Art
+
+A collegue publishes [Tang in a Container](quay.io/mike_nguyen/tang), which is used for FCOS testing and development. This solution, however, does not work in OCP.
+
 ## Use socat instead of xinetd
 
 xinetd is great fun, but really, in a container? This uses socat instead.
 
-When I trying to use [Tang's xinetd unit](https://github.com/latchset/tang/blob/master/units/tangd.xinetd) I hit two problems:
+When I was trying to use [Tang's xinetd unit](https://github.com/latchset/tang/blob/master/units/tangd.xinetd) I hit two problems:
 
 1. `xinetd` wants a proper `/etc/service` entry or it needs `type = UNLISTED`.
 1. Running it in podman was really inconsistent with curl http0.9 errors.
