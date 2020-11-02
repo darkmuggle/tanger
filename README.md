@@ -2,6 +2,12 @@
 
 Execute a containerized Tang Server
 
+## Caveaut Emptor
+
+These scripts are completely unsupported and have the usual "found it on Github support."
+
+If you found this script because someone "official" passed this along, well, my condolences.
+
 ## Prior Art
 
 A collegue publishes [Tang in a Container](quay.io/mike_nguyen/tang), which is used for FCOS testing and development. This solution, however, does not work in OCP.
