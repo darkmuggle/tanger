@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora-minimal:32
+FROM registry.fedoraproject.org/fedora-minimal:latest
 
 VOLUME /var/db/tang
 VOLUME /var/cache/tang
